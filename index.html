@@ -189,9 +189,11 @@
                                         class="fas fa-shopping-cart"></i></i> Commander</button>
                             </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+
                     </div>
                 </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
             <div id="contactCard"
                 style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);z-index: 9999;">
@@ -214,6 +216,19 @@
             </div>
     </section>
 
+    <style>
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #000;
+            /* Couleur des flèches */
+            background: rgba(255, 255, 255, 0.5);
+            /* Fond transparent */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+
 
     <script>
         document.querySelectorAll('.commanderBtn').forEach(function (button) {
@@ -230,9 +245,9 @@
         var swiper = new Swiper(".team-slider", {
             slidesPerView: 4,
             spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
             breakpoints: {
                 400: {
